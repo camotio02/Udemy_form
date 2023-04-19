@@ -1,0 +1,99 @@
+@import url('./roots.css');
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: var(--backgroundWhite);
+}
+.container  header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--backgroundFooter);
+    width: 100%;
+    height: 5%;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    text-transform: uppercase;
+    margin-left: 15px;
+    color: var(--colorText);
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 1em 3em 2em 3em;
+    height: auto;
+    margin: 0em auto;
+    background-color: #fff;
+    border-radius: 4.2px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    text-transform: uppercase;
+    color: var(--colorText);
+    font-weight: 600;
+    margin-top: 10px;
+}
+input {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 20rem;
+    height: 2.5rem;
+
+}
+button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    background: var(--backgroundFooter);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--backgroundWhite);
+}
+button:hover {
+    transition: .9s;
+    border: 0.4rem solid var(--colorText);
+    text-transform:lowercase;
+}
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: red;
+    transition: .9s;
+    font-size: 13px;
+}
+.again {
+    color: black;
+}

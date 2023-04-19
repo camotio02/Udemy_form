@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/index.css">
+    <title>Validáção do formulário</title>
+</head>
+w
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Form @Udemy</h1>
+        </header>
+        <form action="/" method="post" class="formulario">
+            <label class="nome">Nome</label>
+            <input placeholder="Digita seu nome" class="nome validar" type="text">
+
+            <label class="sobrenome">Sobrenome</label>
+            <input placeholder="Digita seu sobrenome" class="sobrenome validar" type="text">
+
+            <label class="cpf">CPF</label>
+            <input placeholder="Digita seu CPF" class="cpf validar" type="number">
+
+            <label class="usuario">Usuário</label>
+            <input placeholder="Digita um usuário" class="usuario validar" type="text">
+
+            <label class="senha">Senha</label>
+            <input placeholder="Crie uma senha" class="senha validar" type="password">
+
+            <label class="repetir-senha">Repetir-senha</label>
+            <input placeholder="Confirmar a sua senha" class="repetir-senha validar" type="password">
+
+            <button type="submit">Enviar formulário</button>
+        </form>
+    </div>
+    <script src="../javascript/ValidaCPF.js"></script>
+    <script src="../javascript/index.js"></script>
+</body>
+
+</html>
