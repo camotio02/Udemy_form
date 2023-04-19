@@ -30,7 +30,23 @@ class validaFormulario {
             if (field.classList.contains('cpf')) {
                 if (!this.validCPF(field)) valid = false
             }
+            if (field.classList.contains('usuario')) {
+                if (!this.validUser(field)) valid = false
+            }
         }
+    }
+    validUser(field) {
+        const user = field.value
+        let valid = false
+        if (3 < user.lentgh > 12) {
+            this.createError(field, 'O usuário precisa ter entre 3 a 12 caracteres.')
+            valid = false
+        }
+        if (!user.math(/[a-zA-Z0-9]+/g)) {
+            this.createError(field, 'O usuário deve conter apenas números e letras.')
+            valid = false
+        }
+        return valid
     }
     validCPF(field) {
         const cpf = new ValidaCPF(field.value)
