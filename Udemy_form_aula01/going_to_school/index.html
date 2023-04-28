@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+            width: 3rem;
+            height: 2rem;
+        }
+
+        input::placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 900;
+            font-size: 1rem;
+        }
+
+        button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 2rem;
+            border: none;
+            background-color: aqua;
+            font-weight: 900;
+        }
+
+        button:hover {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 2rem;
+            border-bottom: 10px solid #000;
+       
+            transition: .5s;
+        }
+
+        .inputs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Resolução</h1>
+        <div class="view">
+            <h2>Calculando o delta</h2>
+
+            <div> 
+                <p>Delta = bˆ2 - 4.a.c</p>
+                de\\
+                <p></p>
+            </div>
+        </div>
+        <div class="inputs">
+
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

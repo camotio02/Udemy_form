@@ -77,6 +77,7 @@ button {
     text-transform: uppercase;
     font-weight: 600;
     color: var(--backgroundWhite);
+    margin-top: 1rem;
 }
 button:hover {
     transition: .9s;
@@ -95,5 +96,5 @@ button:hover {
     font-size: 13px;
 }
 .again {
-    color: black;
+    color: white;
 }

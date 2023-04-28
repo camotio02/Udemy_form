@@ -1,0 +1,124 @@
+@import url('./roots.css');
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+
+.carro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    width: 8rem;
+    height: 3rem;
+    background: red;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 3rem;
+    border-bottom-left-radius: 0.4rem;
+
+}
+
+.carro .rota:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 10px;
+    background-color: white;
+    margin-bottom: -3rem;
+    margin-left: 0.5rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+}
+
+.carro .rota:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -3rem;
+    margin-right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+    background-color: #fff;
+}
+.controllers {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    bottom: 4rem;
+    width: 90%;
+}
+.start {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+
+    width:auto;
+    padding: 5px;
+    height: 2rem;
+    background-color: green
+}
+.desligar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+
+    width:auto;
+    padding: 5px;
+    height: 2rem;
+    background-color: red
+}
+.desligar:hover, .start:hover {
+    background-color: green;
+}
+
+.trajeto {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: gray;
+    margin-bottom: -8rem;
+    width: 100%;
+    height: 3rem;
+    z-index: 805;
+    -ms-transform: skew(30deg);
+    -webkit-transform: skew(30deg);
+    transform: skew(-30deg);
+    box-shadow: rgba(217, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loading {
+    border: 3px solid #094CFA;
+    /* Aqui declaramos nossa animação inline */
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
