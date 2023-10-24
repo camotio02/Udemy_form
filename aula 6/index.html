@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Users</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <nav>
+        <div accesskey="menu" class="link">menu</div>
+        <div accesskey="users" class="link">users</div>
+        <div accesskey="users" class="link">docs</div>
+        <div accesskey="users" class="link">log</div>
+    </nav>
+    <div class="container">
+        <h1>Connect User Dada</h1>
+        <form action="post">
+            <div class="grid">
+                <span>name</span>
+                <input type="text" name="name">
+            </div>
+            <div class="grid">
+                <span>surname</span>
+                <input type="text" name="surname">
+            </div>
+            <div class="grid">
+                <span>peso</span>
+                <input type="number" name="peso">
+            </div>
+            <div class="grid">
+                <span>altura</span>
+                <input type="number" name="altura">
+            </div>
+        </form>
+        <button type="onsubmit" onclick="add()">
+            Enviar dados
+        </button>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
