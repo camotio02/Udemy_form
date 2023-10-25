@@ -1,9 +1,11 @@
 const dada = document.querySelector('form')
+const userDataHtml = document.querySelector('div.users')
+const nav = document.querySelector('nav')
+const not = document.querySelector('div.not')
 const div = document.querySelectorAll('div')
-const isDiv = div.item((d => d.accessKey.includes('menu')))
-isDiv.className = 'linkActive'
 const users = []
-const add = () => {
+const add = (e) => {
+
     const user = {
         name: dada.name.value,
         surname: dada.surname.value,
@@ -11,6 +13,29 @@ const add = () => {
         altura: dada.altura.value
     }
     users.push(user)
-
-    console.log(users)
+    const userDivs = users.map((user, index) => {
+        return `
+            <div class="user_dada">
+                <div class="avatar">${index + 1}</div>
+                <div class="user_infos">
+                    <div>${user.name}</div>
+                    <div>${user.surname}</div>
+                    <div>${user.peso}</div>
+                    <div>${user.altura}</div>
+                </div>
+                </div>
+            `;
+    });
+    not.innerHTML = users.length
+    userDataHtml.innerHTML = userDivs.join('');
 }
+nav.addEventListener('click', (e) => {
+    const isRoute = e.target;
+    if (isRoute.classList.contains('linkActive')) {
+        isRoute.classList.remove('linkActive');
+    } else {
+        isRoute.classList.add('linkActive');
+    }
+    console.log(e);
+});
+

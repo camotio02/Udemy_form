@@ -10,14 +10,17 @@
 
 <body>
     <nav>
-        <div accesskey="menu" class="link">menu</div>
-        <div accesskey="users" class="link">users</div>
-        <div accesskey="users" class="link">docs</div>
-        <div accesskey="users" class="link">log</div>
+        <div accesskey="form" class="link">form</div>
+        <div accesskey="users" class="link">
+            users
+            <div class="not"></div>
+        </div>
+        <div accesskey="docs" class="link">docs</div>
+        <div accesskey="log" class="link">log</div>
     </nav>
     <div class="container">
-        <h1>Connect User Dada</h1>
-        <form action="post">
+        <form>
+            <h6>Connect User Dada</h6>
             <div class="grid">
                 <span>name</span>
                 <input type="text" name="name">
@@ -35,11 +38,11 @@
                 <input type="number" name="altura">
             </div>
         </form>
-        <button type="onsubmit" onclick="add()">
-            Enviar dados
-        </button>
+        <button onclick="add()">Add doc</button>
+        <div class="users"></div>
     </div>
-
+    
+    </button>
     <script src="./index.js"></script>
 </body>
 
