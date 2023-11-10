@@ -10,7 +10,7 @@ function Game() {
     const sendValue = (e) => {
         e.preventDefault();
         if (isNaN(tentativa.value) || !Number.isInteger(Number(tentativa.value))) {
-            alert('Por favor, insira informações corretas.');
+            alert('Por favor, insira um número inteiro válido.');
             return;
         }
         const send = random(0, 20);
