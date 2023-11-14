@@ -8,17 +8,27 @@
   <title>Modelo</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
-
   <section class="container">
-    <h1>Memória Adivinhação</h1>
     <div class="card">
-      <div class="h1">Meus pontos</div>
+      <h4p class="h1">Meus pontos</h4p>
       <div class="points">
         100 pontos
       </div>
     </div>
+    <h1>Adivinhação ou Escolha</h1>
+    <div class="chooses">
+      <h3>O que escolhes?</h3>
+      <div class="choose_value">
+        <div id="prompt" class="choose active_choosen">
+          Escrever número
+        </div>
+        <div id="randomNumbers" class="choose">
+          Multipla escolhas
+        </div>
+      </div>
+    </div>
+    <div class="nums"></div>
     <div class="submits">
       <form action="">
         <input type="text" name="meuvalor">
@@ -26,7 +36,6 @@
       </form>
     </div>
   </section>
-
   <script src="../../index.js"></script>
 </body>
 

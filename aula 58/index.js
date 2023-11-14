@@ -1,11 +1,41 @@
 function Game() {
     let meusPontos = 100;
+    let randoms = []
+    let nums = document.querySelector('.nums')
     const form = document.querySelector('form');
     const tentativa = form.querySelector('input');
-
+    let tempValue;
     function random(min, max) {
         const rand = Math.floor(Math.random() * (max - min + 1)) + min;
         return rand;
+    }
+    function generededRandomNumbers() {
+        gerarNumerosAleatorios()
+        const rand = random(0, 100)
+        randoms.push(rand)
+        tempValue = rand;
+        randoms.sort(() => Math.random() - 0.5);
+        insertValueInDom()
+    }
+    function insertValueInDom() {
+
+        randoms.map((number, index) => {
+            const num = document.createElement('div');
+            return (
+                num.classList.add('num'),
+                num.id = number,
+                num.innerHTML = number,
+                nums.appendChild(num)
+            )
+        })
+        nums.innerHTML =
+            nums.appendChild(nums);
+    }
+    function gerarNumerosAleatorios() {
+        const num1 = Math.floor(Math.random() * 100) + 1;
+        const num2 = Math.floor(Math.random() * 50) + 50;
+        const num3 = Math.floor(Math.random() * 200) - 100;
+        randoms.push(num1, num2, num3);
     }
     const sendValue = (e) => {
         e.preventDefault();
@@ -16,30 +46,53 @@ function Game() {
         const send = random(0, 20);
         verification(send, Number(tentativa.value));
     };
-
-    const verification = (generatedValue, tentativa) => {
+    const verification = (generatedValue, tentativa, event) => {
         const getTagPoints = document.querySelector('.points');
         if (generatedValue === tentativa) {
-            alert("Parabéns! Você ganhou 1 ponto. Seus pontos agora são: " + (meusPontos + 10));
+            event.target.className = 'active_choosen_num',
             meusPontos += 10;
             getTagPoints.innerHTML = '';
             getTagPoints.appendChild(creatTag(meusPontos));
+            randoms = [];
+            setTimeout(() => {
+                nums.innerHTML = '';
+                generededRandomNumbers()
+            }, 3000)
         } else {
-            alert("Ops! Fica para próxima. O valor correto é: " + generatedValue);
-            console.log("Ops! Pontos diminuíram para: " + (meusPontos - 15));
+            event.target.className = 'active_choosen_num_error',
             meusPontos -= 15;
             getTagPoints.innerHTML = '';
             getTagPoints.appendChild(creatTag(meusPontos));
+            randoms = [];
+            setTimeout(() => {
+                nums.innerHTML = '';
+                generededRandomNumbers()
+            }, 2000)
         }
     };
-
     const creatTag = (value) => {
         const tag = document.createElement('div');
         tag.innerHTML = value;
         return tag;
     };
-
-    form.addEventListener('submit', sendValue);
+    document.addEventListener('click', (event) => {
+        const defaultSubmits = document.querySelector('.submits')
+        const defaultChoosen = document.getElementById('prompt')
+        if (event.target.id === 'randomNumbers') {
+            defaultChoosen.classList.remove('active_choosen')
+            defaultSubmits.style.display = 'none'
+            event.target.classList.add('active_choosen')
+            generededRandomNumbers()
+            return;
+        }
+        if (event.target.classList.contains('num')) {
+            const tentativa = event.target.id;
+            verification(tempValue, Number(tentativa), event)
+            return;
+        }
+        form.addEventListener('submit', sendValue);
+    })
+    console.log(randoms)
 }
 
 Game();

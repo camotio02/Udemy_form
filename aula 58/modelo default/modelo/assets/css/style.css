@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
 :root {
   --primary-color: rgb(17, 86, 102);
   --primary-color-darker: rgb(9, 48, 56);
+  --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 * {
@@ -13,29 +15,124 @@ body {
   margin: 0;
   padding: 0;
   background: var(--primary-color);
-  font-family: 'Open sans', sans-serif;
+  font-family: Papyrus, fantasy;
   font-size: 1.3em;
   line-height: 1.5em;
 }
 
 .container {
+  position: relative;
   max-width: 640px;
   margin: 50px auto;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
-form input, form label, form button {
+.card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  right: 0%;
+  top: 0%;
+  color: var(--primary-color);
+  width: 30%;
+  padding: 10px;
+}
+
+.points {
+  border-top: 10px solid var(--primary-color);
+  font-family: Papyrus, fantasy;
+}
+
+.chooses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.choose_value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.choose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  width: 50%;
+  background-color: var(--primary-color);
+  color: white;
+}
+.active_choosen {
+  color: white;
+  background-color: rgb(234, 124, 14);
+  box-shadow: var(--shadow)
+}
+.active_choosen_num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(56, 224, 157);
+  box-shadow: var(--shadow);
+  animation: piscar 1s infinite;
+}
+.active_choosen_num_error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(234, 25, 14);
+  box-shadow: var(--shadow);
+  animation: piscar 1s infinite;
+}
+.nums {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  color: white;
+}
+
+.num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+form input,
+form label,
+form button {
   display: block;
   width: 100%;
   margin-bottom: 10px;
+  font-family: Papyrus, fantasy;
 }
 
 form input {
   font-size: 24px;
   height: 50px;
   padding: 0 20px;
+  font-family: Papyrus, fantasy;
 }
 
 form input:focus {
@@ -55,4 +152,9 @@ form button {
 
 form button:hover {
   background: var(--primary-color-darker);
+}
+@keyframes piscar {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
