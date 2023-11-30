@@ -1,0 +1,162 @@
+:root {
+    --color_one: #006064;
+    --color_2: #00b8d4;
+    --color_3: #004d40;
+    --color_4: #827717;
+    --black: black;
+    --gray: gray;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 150%;
+    font-family: "Open Sans", sans-serif
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    min-width: 100vw;
+    height: 100vh;
+}
+
+.celular {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 370px;
+    height: 750px;
+    border-radius: 50px;
+    background-color: var(--black);
+    border: 3px solid var(--gray);
+}
+
+.lcd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 740px;
+    background-image: url(https://9to5mac.com/wp-content/uploads/sites/6/2023/09/iPhone-15-wallpaper-5.png);
+    background-size: cover;
+    border-radius: 50px;
+}
+
+.radius {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 20px;
+    background-color: var(--black);
+    border-radius: 50px;
+    width: 40%;
+}
+
+.volumes {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 5px;
+    height: 100px;
+    top: 200px;
+    left: -6px;
+    gap: 5px;
+}
+
+.mais,
+.menos {
+    width: 5px;
+    height: 100px;
+    background-color: var(--gray);
+    border-radius: 50px;
+}
+
+.ligar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5px;
+    height: 50px;
+    top: 200px;
+    right: -6px;
+    border-radius: 50px;
+    background-color: var(--gray);
+}
+
+.locked {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 25px;
+    color: white;
+    width: 100%;
+    height: 30%;
+    gap: 10px;
+}
+
+.locked .timer-hours {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    font-size: 100px;
+}
+.seconds {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    font-size: 30px;
+}
+.locked .timer-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.slides {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+}
+.slides div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color:white;
+}
+.slides img {
+    background-color:white;
+    border-radius: 50%;
+}
