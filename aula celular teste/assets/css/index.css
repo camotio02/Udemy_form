@@ -82,12 +82,48 @@ body {
 
 .mais,
 .menos {
+    left: -0px;
     width: 5px;
     height: 100px;
     background-color: var(--gray);
     border-radius: 50px;
+    color: var(--gray);
+}
+.mais:hover, .menos:hover{
+    width: 50px;
+    height: 100px;
+    left: -100px;
+    transition: all .3s;
+    border-radius: 0px;
+    background-color: var(--gray);
+    cursor: pointer;
+    color: aliceblue;
 }
 
+.mais::after{
+    content: '+';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 150%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+.menos::after{
+    content: '-';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 150%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
 .ligar {
     position: absolute;
     display: flex;
@@ -99,6 +135,32 @@ body {
     right: -6px;
     border-radius: 50px;
     background-color: var(--gray);
+}
+
+.on {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    right: -0px;
+    border-radius: 50px;
+    background-color: var(--gray);
+}
+.on::after{
+    content: 'ON';
+    color: aliceblue;
+    line-height: 150%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+}
+.on:hover {
+    right: -40px;
+    transition: all .3s;
+    border-radius: 0px;
+    background-color: var(--gray);
+    cursor: pointer;
 }
 
 .locked {
@@ -122,6 +184,7 @@ body {
     height: 50%;
     font-size: 100px;
 }
+
 .seconds {
     display: flex;
     align-items: flex-start;
@@ -129,6 +192,7 @@ body {
     height: 100%;
     font-size: 30px;
 }
+
 .locked .timer-date {
     display: flex;
     align-items: center;
@@ -147,6 +211,7 @@ body {
     height: auto;
     gap: 10px;
 }
+
 .slides div {
     display: flex;
     align-items: center;
@@ -154,9 +219,10 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color:white;
+    background-color: white;
 }
+
 .slides img {
-    background-color:white;
+    background-color: white;
     border-radius: 50%;
 }
