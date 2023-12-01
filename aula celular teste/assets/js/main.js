@@ -1,18 +1,21 @@
 import daysOfTheWeek from './diasDaSemana.js';
 import piliticaDeUso from './piliticaDeUso.js';
-
+import celularStatus from './default_mode_infos/infos.js'
+const isOn = JSON.parse(localStorage.getItem('informacoesCelular'))
 function celphone() {
     return {
-        isOn: localStorage.getItem('onCellphone'),
+        isOn: JSON.parse(localStorage.getItem('informacoesCelular')),
         data: new Date(),
         tagDateTimerShow: document.querySelector('.timer-hours-time'),
         tagDateSecondsShow: document.querySelector('.seconds'),
         tagDateShow: document.querySelector('.timer-date'),
         screen_ff: document.querySelector('.screen-off'),
+
         get canOnCell() {
-            if (!this.isOn) {
-                localStorage.setItem('onCellphone', this.isOn)
+            if (this.isOn === null) {
+                localStorage.setItem('informacoesCelular', JSON.stringify(celularStatus))
             }
+            console.log(this.isOn)
             return;
         },
         get horas() {
@@ -45,23 +48,42 @@ function celphone() {
             document.addEventListener('click', (e) => {
                 const display = getComputedStyle(this.screen_ff).display;
                 const isFabric =
-                    this.isOn &&
+                    this.isOn.neverbeenconnected &&
                     e.target.id === 'on' &&
                     display === 'flex';
                 if (isFabric) {
                     const politicaDeUso = confirm(piliticaDeUso);
-                    politicaDeUso && alert('Regras aceitas');
-                    this.screen_ff.style.display = 'none';
+                    if (politicaDeUso) {
+                        const celularInfosString = localStorage.getItem('informacoesCelular');
+                        const celularInfos = JSON.parse(celularInfosString);
+                        celularInfos.on = true;
+                        const celularInfosAtualizadoString = JSON.stringify(celularInfos);
+                        localStorage.setItem('informacoesCelular', celularInfosAtualizadoString);
+                        return checkStatus(this.isOn.on)
+                    }
                 }
             })
         }
-
-
-
     }
 }
-
 const startCelphone = celphone()
-startCelphone.horas;
-startCelphone.clicks;
+function checkStatus(status) {
+    if (status || isOn?.on) {
+        startCelphone.horas;
+        function disploqueia() {
+            return {
+                displayLock: document.querySelector('.screen-off'),
+                displayOnBotton: document.querySelector('.on'),
+                get on() {
+                    this.displayLock.style.display = 'none',
+                        this.displayOnBotton.style.display = 'none'
+                }
+            }
+        }
+        const on = disploqueia()
+        on.on
+    }
+}
+checkStatus()
 startCelphone.canOnCell;
+startCelphone.clicks;
