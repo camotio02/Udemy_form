@@ -1,10 +1,20 @@
-import daysOfTheWeek from './diasDaSemana.js'
+import daysOfTheWeek from './diasDaSemana.js';
+import piliticaDeUso from './piliticaDeUso.js';
+
 function celphone() {
     return {
+        isOn: localStorage.getItem('onCellphone'),
         data: new Date(),
         tagDateTimerShow: document.querySelector('.timer-hours-time'),
         tagDateSecondsShow: document.querySelector('.seconds'),
         tagDateShow: document.querySelector('.timer-date'),
+        screen_ff: document.querySelector('.screen-off'),
+        get canOnCell() {
+            if (!this.isOn) {
+                localStorage.setItem('onCellphone', this.isOn)
+            }
+            return;
+        },
         get horas() {
             this.tagDateTimerShow.innerHTML = '';
             this.tagDateSecondsShow.innerHTML = '';
@@ -33,7 +43,16 @@ function celphone() {
 
         get clicks() {
             document.addEventListener('click', (e) => {
-
+                const display = getComputedStyle(this.screen_ff).display;
+                const isFabric =
+                    this.isOn &&
+                    e.target.id === 'on' &&
+                    display === 'flex';
+                if (isFabric) {
+                    const politicaDeUso = confirm(piliticaDeUso);
+                    politicaDeUso && alert('Regras aceitas');
+                    this.screen_ff.style.display = 'none';
+                }
             })
         }
 
@@ -44,36 +63,5 @@ function celphone() {
 
 const startCelphone = celphone()
 startCelphone.horas;
-const celularStatus = {
-    on: false,
-    timeOnAll: 0,
-    bactery: 50,
-
-    modelo: 'iPhone 15 Pro',
-    cor: 'Prateado',
-    capacidade: '256GB',
-    sistemaOperacional: 'iOS 16',
-    tela: {
-        tamanho: '6.7 polegadas',
-        tipo: 'Super Retina XDR',
-        resolucao: '2778 x 1284 pixels'
-    },
-    camera: {
-        principal: {
-            quantidadeLentes: 4,
-            megapixels: 108,
-            recursos: ['Night mode', 'Deep Fusion', 'Smart HDR 4']
-        },
-        frontal: {
-            megapixels: 40,
-            recursos: ['Retina Flash', 'Night mode', '4K Dolby Vision HDR recording']
-        }
-    },
-    bateria: {
-        capacidade: '4500 mAh',
-        carregamento: 'Carregamento rápido de 30W'
-    },
-    conectividade: ['5G', 'Wi-Fi 6', 'Bluetooth 5.2'],
-    recursosAdicionais: ['Face ID', 'MagSafe', 'Resistência à água e poeira (IP68)'],
-    preco: 'A partir de $1.299'
-}
+startCelphone.clicks;
+startCelphone.canOnCell;
