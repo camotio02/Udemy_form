@@ -69,7 +69,8 @@ function celphone() {
                     screenLock.onScreenLock()
                 }
             })
-        }
+        },
+        
     }
 }
 const startCelphone = celphone()
