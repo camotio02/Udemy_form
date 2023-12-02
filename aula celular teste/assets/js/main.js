@@ -1,6 +1,8 @@
 import daysOfTheWeek from './diasDaSemana.js';
 import piliticaDeUso from './piliticaDeUso.js';
 import celularStatus from './default_mode_infos/infos.js'
+import screenLock from './apps/screenLock/tag.js'
+const isScreenLock = localStorage.getItem('isScreen')
 const isOn = JSON.parse(localStorage.getItem('informacoesCelular'))
 function celphone() {
     return {
@@ -10,7 +12,6 @@ function celphone() {
         tagDateSecondsShow: document.querySelector('.seconds'),
         tagDateShow: document.querySelector('.timer-date'),
         screen_ff: document.querySelector('.screen-off'),
-
         get canOnCell() {
             if (this.isOn === null) {
                 localStorage.setItem('informacoesCelular', JSON.stringify(celularStatus))
@@ -47,6 +48,7 @@ function celphone() {
         get clicks() {
             document.addEventListener('click', (e) => {
                 const display = getComputedStyle(this.screen_ff).display;
+                const letsGoScreenLock = display === 'none' && !isScreenLock
                 const isFabric =
                     this.isOn.neverbeenconnected &&
                     e.target.id === 'on' &&
@@ -61,6 +63,10 @@ function celphone() {
                         localStorage.setItem('informacoesCelular', celularInfosAtualizadoString);
                         return checkStatus(this.isOn.on)
                     }
+                }
+                if(letsGoScreenLock){
+                    alert('ya')
+                    screenLock.onScreenLock()
                 }
             })
         }
@@ -84,6 +90,13 @@ function checkStatus(status) {
         on.on
     }
 }
+function checkScreenLOock(){
+
+    if(isScreenLock){
+        screenLock.onScreenLock()
+    }
+}
+checkScreenLOock()
 checkStatus()
 startCelphone.canOnCell;
 startCelphone.clicks;
