@@ -1,16 +1,19 @@
+import base from "./base.js";
+
 function insertNuns() {
     return {
-        allShowPasswordChild: document.querySelectorAll('.show-password-child'),
+
         tempPassword: '',
         showPassword: document.querySelector('.show-password'),
         get start() {
             document.addEventListener('click', (e) => {
                 const isTr_lock_child = e.target.classList.contains('tr-lock-child')
+
                 if (isTr_lock_child) {
+                    const allShowPasswordChild = document.querySelectorAll('.show-password-child')
                     const text = e.target.innerText
                     this.tempPassword += text;
-                    console.log(this.allShowPasswordChild[5].style.background)
-                    this.allShowPasswordChild[this.tempPassword.length - 1].style.background = 'white';
+                    allShowPasswordChild[this.tempPassword.length - 1].style.background = 'white';
                     if (this.tempPassword.length === 6) {
                         this.checkIfPasswordIsValid(this.tempPassword)
                     }
@@ -18,17 +21,22 @@ function insertNuns() {
             })
         },
         checkIfPasswordIsValid(tempPassword) {
+            const newAllshowPassword = document.querySelectorAll('.show-password-child')
             if (tempPassword === '123456') {
                 this.showPassword.innerHTML = 'Desploqueado!'
             } else {
-                const lastValue = this.showPassword.innerHTML;
-                this.showPassword.innerHTML = 'Senha incorreta'
+                const lastValue = base;
+                this.showPassword.classList.add('show-password-incorreto')
+                newAllshowPassword.forEach((tag)=> {
+                    tag.style.backgroundColor = 'red'
+                })
                 setTimeout(() => {
                     this.showPassword.innerHTML = lastValue;
-                    this.tempPassword = '',
-                    this.allShowPasswordChild.forEach((tag)=> {
-                        tag.style.backgroundColor = 'red'
+                    this.tempPassword = '';
+                    newAllshowPassword.forEach((tag)=> {
+                        tag.style.backgroundColor = ''
                     })
+                    this.showPassword.classList.remove('show-password-incorreto')
                 }, 1000)
             }
 

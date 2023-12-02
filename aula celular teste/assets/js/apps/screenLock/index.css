@@ -31,16 +31,23 @@
     background-size: cover;
     border-radius: 50px;
 }
+
 .show-password {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:center;
     width: 55%;
     bottom: 63%;
     min-height: 5%;
     gap: 10px;
     padding: 10px;
+    font-size: 20px;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+.show-password-incorreto {
+    animation: shake 0.5s ease-in-out;
 }
 .show-password div {
     display: flex;
@@ -100,4 +107,15 @@
     height: 3.5%;
     bottom: 2rem;
     color: aliceblue;
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
 }
