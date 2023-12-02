@@ -1,8 +1,10 @@
 import base from "./base.js";
-
+import screenLock from '../tag.js'
 function insertNuns() {
     return {
-
+        tagPess: document.querySelector('.lockedIcon'),
+        pessCodeUnlock: `<i class='bx bx-lock-open-alt' ></i>`,
+        pessCodeEnter: document.querySelector('.enter-pesscode'),
         tempPassword: '',
         showPassword: document.querySelector('.show-password'),
         get start() {
@@ -23,12 +25,19 @@ function insertNuns() {
         checkIfPasswordIsValid(tempPassword) {
             const newAllshowPassword = document.querySelectorAll('.show-password-child')
             if (tempPassword === '123456') {
-                this.showPassword.innerHTML = 'Desploqueado!'
+                const screenLocks = document.querySelector('.screen-lock')
+                this.tagPess.innerHTML = this.pessCodeUnlock;
+                this.showPassword.innerHTML = 'Desploqueado!';
+                setTimeout(()=> {
+                    localStorage.setItem('isScreen', false);
+                    screenLocks.style.display = 'none'
+                },1000)
             } else {
                 const lastValue = base;
+                this.pessCodeEnter.innerHTML = 'Senha incorreta!';
                 this.showPassword.classList.add('show-password-incorreto')
                 newAllshowPassword.forEach((tag) => {
-                    tag.style.backgroundColor = 'red'
+                    tag.style.backgroundColor = 'red';
                 })
                 setTimeout(() => {
                     this.showPassword.innerHTML = lastValue;
@@ -36,6 +45,7 @@ function insertNuns() {
                     newAllshowPassword.forEach((tag) => {
                         tag.style.backgroundColor = ''
                     })
+                    this.pessCodeEnter.innerHTML = 'Digite a senha'
                     this.showPassword.classList.remove('show-password-incorreto')
                 }, 1000)
             }
@@ -51,7 +61,7 @@ function insertNuns() {
                 }
             });
         }
-        
+
     }
 }
 const insert = insertNuns()

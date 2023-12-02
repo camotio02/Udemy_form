@@ -16,7 +16,6 @@ function celphone() {
             if (this.isOn === null) {
                 localStorage.setItem('informacoesCelular', JSON.stringify(celularStatus))
             }
-            console.log(this.isOn)
             return;
         },
         get horas() {
@@ -64,13 +63,12 @@ function celphone() {
                         return checkStatus(this.isOn.on)
                     }
                 }
-                if(letsGoScreenLock){
-                    alert('ya')
+                if (letsGoScreenLock) {
                     screenLock.onScreenLock()
                 }
             })
         },
-        
+
     }
 }
 const startCelphone = celphone()
@@ -91,13 +89,14 @@ function checkStatus(status) {
         on.on
     }
 }
-function checkScreenLOock(){
-
-    if(isScreenLock){
+function handleLocalStorageChange(event) {
+    if (event.key === 'isScreen') {
+        console.log('isScreen foi alterado:', localStorage.getItem('isScreen'));
         screenLock.onScreenLock()
     }
 }
-checkScreenLOock()
+window.addEventListener('storage', handleLocalStorageChange);
+screenLock.onScreenLock()
 checkStatus()
 startCelphone.canOnCell;
 startCelphone.clicks;
