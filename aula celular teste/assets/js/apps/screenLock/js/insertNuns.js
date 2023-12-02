@@ -27,13 +27,13 @@ function insertNuns() {
             } else {
                 const lastValue = base;
                 this.showPassword.classList.add('show-password-incorreto')
-                newAllshowPassword.forEach((tag)=> {
+                newAllshowPassword.forEach((tag) => {
                     tag.style.backgroundColor = 'red'
                 })
                 setTimeout(() => {
                     this.showPassword.innerHTML = lastValue;
                     this.tempPassword = '';
-                    newAllshowPassword.forEach((tag)=> {
+                    newAllshowPassword.forEach((tag) => {
                         tag.style.backgroundColor = ''
                     })
                     this.showPassword.classList.remove('show-password-incorreto')
@@ -41,14 +41,17 @@ function insertNuns() {
             }
 
         },
-        listenTouchstart(){
-            document.addEventListener('touchstart', function() {
-                if(this.classList.contains('tr-lock-child')){
-                alert(this)
+        listenTouchstart() {
+            document.addEventListener('touchstart', (e) => {
+                if (e.target.classList.contains('tr-lock-child')) {
+                    e.target.classList.add('touchEvent');
+                    setTimeout(() => {
+                        e.target.classList.remove('touchEvent');
+                    }, 500);
                 }
-                alert(123)
             });
         }
+        
     }
 }
 const insert = insertNuns()
