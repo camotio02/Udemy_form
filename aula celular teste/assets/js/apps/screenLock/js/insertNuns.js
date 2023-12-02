@@ -44,7 +44,7 @@ function insertNuns() {
         listenTouchstart(){
             document.addEventListener('touchstart', function() {
                 if(this.classList.contains('tr-lock-child')){
-                    console.log(this)
+                alert(this)
                 }
                 alert(123)
             });
