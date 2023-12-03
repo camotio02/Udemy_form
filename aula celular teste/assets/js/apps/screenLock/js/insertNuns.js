@@ -1,5 +1,4 @@
 import base from "./base.js";
-import screenLock from '../tag.js'
 function insertNuns() {
     return {
         tagPess: document.querySelector('.lockedIcon'),
@@ -7,6 +6,7 @@ function insertNuns() {
         pessCodeEnter: document.querySelector('.enter-pesscode'),
         tempPassword: '',
         showPassword: document.querySelector('.show-password'),
+
         get start() {
             document.addEventListener('click', (e) => {
                 const isTr_lock_child = e.target.classList.contains('tr-lock-child')
@@ -28,10 +28,10 @@ function insertNuns() {
                 const screenLocks = document.querySelector('.screen-lock')
                 this.tagPess.innerHTML = this.pessCodeUnlock;
                 this.showPassword.innerHTML = 'Desploqueado!';
-                setTimeout(()=> {
+                setTimeout(() => {
                     localStorage.setItem('isScreen', false);
                     screenLocks.style.display = 'none'
-                },1000)
+                }, 1000)
             } else {
                 const lastValue = base;
                 this.pessCodeEnter.innerHTML = 'Senha incorreta!';
@@ -63,7 +63,11 @@ function insertNuns() {
         }
 
     }
+
 }
+
+
+
 const insert = insertNuns()
 insert.start
 insert.listenTouchstart()

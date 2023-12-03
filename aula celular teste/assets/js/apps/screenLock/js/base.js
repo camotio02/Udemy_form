@@ -8,4 +8,5 @@ function base() {
                 <div class="show-password-child"></div>
     `
 }
+
 export default base()

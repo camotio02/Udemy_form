@@ -1,3 +1,5 @@
+import screenLockContent from './js/content.js'
+
 function screenLock() {
     return {
         isScreenLock: localStorage.getItem('isScreen'),
@@ -7,6 +9,9 @@ function screenLock() {
         radius: document.querySelector('.radius'),
         screenLock: document.querySelector('.screen-lock'),
         tag: 'div',
+        creatScreenLockContent() {
+            this.screenLock.innerHTML = screenLockContent
+        },
         createTags() {
             const tags = [
                 {
@@ -37,7 +42,6 @@ function screenLock() {
                 this.radius.style.backgroundColor = 'gray';
                 return false;
             }
-
             this.lcdMain.style.display = 'none';
             screenLock.style.display = 'flex';
             this.slides.style.display = 'none';
@@ -49,6 +53,6 @@ function screenLock() {
 }
 
 const oFFscreen = screenLock();
+oFFscreen.creatScreenLockContent()
 oFFscreen.onScreenLock();
-
 export default screenLock();
