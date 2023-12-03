@@ -28,9 +28,11 @@ function insertNuns() {
                 const screenLocks = document.querySelector('.screen-lock')
                 this.tagPess.innerHTML = this.pessCodeUnlock;
                 this.showPassword.innerHTML = 'Desploqueado!';
+                const isScreen = localStorage.setItem('isScreen', false);
                 setTimeout(() => {
-                    localStorage.setItem('isScreen', false);
-                    screenLocks.style.display = 'none'
+                    if(!isScreen){
+                        screenLocks.style.display = 'none'
+                    }
                 }, 1000)
             } else {
                 const lastValue = base;
