@@ -1,3 +1,4 @@
+import batery from './js/batery.js';
 import contentHome from './js/content.js'
 function home() {
     return {
@@ -30,3 +31,4 @@ function home() {
 const setHome = home()
 setHome.insertContent
 setHome.horas()
+batery.checkBatery()

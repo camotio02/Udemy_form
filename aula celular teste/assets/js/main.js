@@ -2,7 +2,7 @@ import daysOfTheWeek from './diasDaSemana.js';
 import piliticaDeUso from './piliticaDeUso.js';
 import celularStatus from './default_mode_infos/infos.js'
 import screenLock from './apps/screenLock/tag.js'
-const isScreenLock = localStorage.getItem('isScreen')
+const isScreenLock = localStorage.getItem('isScreenLock') || 'icant'
 const isOn = JSON.parse(localStorage.getItem('informacoesCelular'))
 function celphone() {
     return {
@@ -43,11 +43,10 @@ function celphone() {
                 this.tagDateSecondsShow.innerHTML = `${secondsTime}`;
             }, 1000);
         },
-
         get clicks() {
             document.addEventListener('click', (e) => {
                 const display = getComputedStyle(this.screen_ff).display;
-                const letsGoScreenLock = display === 'none' && !isScreenLock
+                const letsGoScreenLock = display === 'none' && isScreenLock === 'icant'
                 const isFabric =
                     this.isOn.neverbeenconnected &&
                     e.target.id === 'on' &&
@@ -64,7 +63,8 @@ function celphone() {
                     }
                 }
                 if (letsGoScreenLock) {
-                    screenLock.onScreenLock()
+                    localStorage.setItem('isScreenLock', 'cant')
+                    screenLock.creatScreenLockContent()
                 }
             })
         },
@@ -90,13 +90,12 @@ function checkStatus(status) {
     }
 }
 function handleLocalStorageChange(event) {
-    if (event.key === 'isScreen') {
-        console.log('isScreen foi alterado:', localStorage.getItem('isScreen'));
-        screenLock.onScreenLock()
+    if (event.key === 'isScreenLock') {
+        console.log('isScreenLock foi alterado:', localStorage.getItem('isScreen'));
+        screenLock.creatScreenLockContent()
     }
 }
 window.addEventListener('storage', handleLocalStorageChange);
-screenLock.onScreenLock()
 checkStatus()
 startCelphone.canOnCell;
 startCelphone.clicks;

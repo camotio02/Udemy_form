@@ -1,4 +1,5 @@
 import base from "./base.js";
+import screenLock from  '../tag.js'
 function insertNuns() {
     return {
         tagPess: document.querySelector('.lockedIcon'),
@@ -25,14 +26,13 @@ function insertNuns() {
         checkIfPasswordIsValid(tempPassword) {
             const newAllshowPassword = document.querySelectorAll('.show-password-child')
             if (tempPassword === '123456') {
-                const screenLocks = document.querySelector('.screen-lock')
+                const screens = document.querySelector('.screens')
                 this.tagPess.innerHTML = this.pessCodeUnlock;
                 this.showPassword.innerHTML = 'Desploqueado!';
-                const isScreen = localStorage.setItem('isScreen', false);
+                localStorage.setItem('isScreenLock', 'icant');
+                localStorage.setItem('isScreenHome', 'cant');
                 setTimeout(() => {
-                    if(!isScreen){
-                        screenLocks.style.display = 'none'
-                    }
+                    screenLock.creatScreenLockContent()
                 }, 1000)
             } else {
                 const lastValue = base;

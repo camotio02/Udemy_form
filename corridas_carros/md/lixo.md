@@ -74,7 +74,6 @@ input:focus+.input-icon i {
 input:focus+.input-icon:after {
     border-right-color: #f0a500;
 }
-
 input[type="radio"] {
     display: none;
 }

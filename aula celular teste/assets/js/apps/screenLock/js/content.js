@@ -1,5 +1,7 @@
 function screenLockContent() {
     return `
+    <div class="screen-lock">
+
         <div class="lockedIcon">
         <i class='bx bx-lock'></i>
     </div>
@@ -40,7 +42,7 @@ function screenLockContent() {
         <div class="emrg">Emegência</div>
         <div class="back-lock">Back</div>
     </div>
-    
+    </div>
     `
 }
 export default screenLockContent()

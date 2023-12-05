@@ -1,5 +1,6 @@
 function contentHome(){
     return`
+    <div class="home">
         <div class="timesHome">
            02:13
         </div>
@@ -8,9 +9,11 @@ function contentHome(){
             <i class='bx bx-signal-5'></i>
         </div>
         <div class="wifi">
-            <i class='bx bx-wifi-2'></i>
-        </div>
-        <div class="bateria">1</div>
+            <i class='bx bx-wifi'></i>
+            </div>
+            <div class="bateria">
+        <div class="loadingbactery"></div>
+            </div>
             <div class="bateriaPorcentagem">20%</div>
         </div>
         <div class="bottom-apps">
@@ -27,6 +30,7 @@ function contentHome(){
                 <i class='bx bx-phone'></i>
             </div>
         </div>
+        
     `
 }
 export default contentHome()
