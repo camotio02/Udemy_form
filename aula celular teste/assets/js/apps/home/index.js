@@ -1,8 +1,10 @@
 import batery from "./js/batery.js";
-
+import alertComponent from "../../../../components/alert/index.js";
 function home() {
     return {
         horas() {
+            const home = document.querySelector('.home');
+            home.innerHTML += alertComponent;
             setInterval(() => {
                 const TagTimeHome = document.querySelector('.timesHome')
                 const currentTime = new Date();
