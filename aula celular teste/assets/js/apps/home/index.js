@@ -10,7 +10,6 @@ function home() {
                     hour12: false,
                 });
                 TagTimeHome.innerHTML = `${this.addZero(hourTime)}`
-                console.log(TagTimeHome)
             }, 1000);
         },
         addZero(numero) {
