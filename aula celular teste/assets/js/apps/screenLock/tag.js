@@ -1,6 +1,9 @@
 import screenLockContent from './js/content.js'
 import contentHome from '../home/js/content.js'
 function screenLock() {
+    const screens = document.querySelector('.screens');
+    const isScreenLock = localStorage.getItem('isScreenLock') || 'icant';
+    const isScreenHome = localStorage.getItem('isScreenHome') || 'icant';
     return {
         lockedTime: document.querySelector('.locked'),
         slides: document.querySelector('.slides'),
@@ -9,13 +12,9 @@ function screenLock() {
         screens: document.querySelector('.screens'),
         tag: 'div',
         creatScreenLockContent() {
-            const screens = document.querySelector('.screens')
-            const isScreenLock = localStorage.getItem('isScreenLock') || 'icant'
-            const isScreenHome = localStorage.getItem('isScreenHome') || 'icant'
             if (isScreenLock === 'cant') {
                 screens.innerHTML = screenLockContent
             } else if (isScreenHome === 'cant') {
-                console.log(screens.innerHTML)
                 screens.innerHTML = contentHome
             }
         },

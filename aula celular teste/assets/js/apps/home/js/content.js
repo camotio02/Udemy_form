@@ -2,7 +2,7 @@ function contentHome(){
     return`
     <div class="home">
         <div class="timesHome">
-           02:13
+          12:00:00
         </div>
         <div class="internet-wifi-bateria">
         <div class="internet">
@@ -14,7 +14,7 @@ function contentHome(){
             <div class="bateria">
         <div class="loadingbactery"></div>
             </div>
-            <div class="bateriaPorcentagem">20%</div>
+            <div class="bateriaPorcentagem">10%</div>
         </div>
         <div class="bottom-apps">
             <div class="app">

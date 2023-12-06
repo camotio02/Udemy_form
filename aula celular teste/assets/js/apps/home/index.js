@@ -1,21 +1,16 @@
-import batery from './js/batery.js';
-import contentHome from './js/content.js'
+import batery from "./js/batery.js";
+
 function home() {
     return {
-        homeScreen: document.querySelector('.home'),
-        get insertContent() {
-            this.homeScreen.innerHTML += contentHome;
-        },
-
         horas() {
-            const TagTimeHome = document.querySelector('.timesHome')
             setInterval(() => {
+                const TagTimeHome = document.querySelector('.timesHome')
                 const currentTime = new Date();
                 const hourTime = currentTime.toLocaleTimeString('pt-BR', {
                     hour12: false,
-
                 });
                 TagTimeHome.innerHTML = `${this.addZero(hourTime)}`
+                console.log(TagTimeHome)
             }, 1000);
         },
         addZero(numero) {
@@ -24,11 +19,8 @@ function home() {
             }
             return numero 
         }
-
     }
 }
-
-const setHome = home()
-setHome.insertContent
-setHome.horas()
+const p = home()
+p.horas()
 batery.checkBatery()
