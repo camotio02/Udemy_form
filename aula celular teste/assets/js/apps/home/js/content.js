@@ -4,6 +4,7 @@ function contentHome(){
         <div class="timesHome">
           12:00:00
         </div>
+        <div class="radius"></div>
         <div class="internet-wifi-bateria">
         <div class="internet">
             <i class='bx bx-signal-5'></i>
