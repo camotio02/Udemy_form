@@ -52,6 +52,7 @@
     font-size: 2rem;
     background-color: #fff;
 }
+
 .controllers {
     position: absolute;
     display: flex;
@@ -63,38 +64,48 @@
     bottom: 4rem;
     width: 90%;
 }
+
 .start {
-  
+
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: center;
 
-    width:auto;
+    width: auto;
     padding: 5px;
     height: 2rem;
     background-color: green
 }
+
 .desligar {
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: center;
 
-    width:auto;
+    width: auto;
     padding: 5px;
     height: 2rem;
     background-color: red
 }
-.desligar:hover, .start:hover {
+.desligar:hover,
+.start:hover {
     background-color: green;
 }
-
+.cardLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    height: 50%;
+}
 .trajeto {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
     justify-content: center;
     background-color: gray;
     margin-bottom: -8rem;
@@ -106,12 +117,17 @@
     transform: skew(-30deg);
     box-shadow: rgba(217, 0, 0, 0.35) 0px 5px 15px;
 }
-
+.h1loading  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
 .loading {
     border: 3px solid #094CFA;
-    /* Aqui declaramos nossa animação inline */
     animation: rotate 1s infinite linear;
 }
+
 
 @keyframes rotate {
     from {
