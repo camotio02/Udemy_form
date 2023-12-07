@@ -62,10 +62,12 @@
             $(".draggable").draggable({
                 containment: "body",
                 scroll: false,
-                stack: ".draggable"
+                stack: ".draggable",
+                touchAction: 'none'
             });
         });
     </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="./aula celular teste/assets/js/screens.js" type="module"></script>
     <script src="./aula celular teste/assets/js/main.js" type="module"></script>
     <script src="./aula celular teste/assets/js/apps/screenLock/js/insertNuns.js" type="module"></script>

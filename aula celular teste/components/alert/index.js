@@ -2,7 +2,7 @@ const alertComponent = () => {
 
 
     return `
-        <div class="alert">
+        <div class="alert draggable">
             <div class="titleAlert">
                 🚨Avisos do sistema🚨:
             </div>
