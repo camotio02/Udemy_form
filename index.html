@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celular</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="./aula celular teste/components/index.css">
     <link rel="stylesheet" href="./aula celular teste/assets/css/index.css">
     <link rel="stylesheet" href="./aula celular teste/assets/css/lock.css">
@@ -39,7 +42,7 @@
                     <div class="seconds">20</div>
                 </div>
                 <div class="timer-date">
-    
+
                 </div>
             </div>
             <div class="slides">
@@ -54,6 +57,15 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function () {
+            $(".draggable").draggable({
+                containment: "body",
+                scroll: false,
+                stack: ".draggable"
+            });
+        });
+    </script>
     <script src="./aula celular teste/assets/js/screens.js" type="module"></script>
     <script src="./aula celular teste/assets/js/main.js" type="module"></script>
     <script src="./aula celular teste/assets/js/apps/screenLock/js/insertNuns.js" type="module"></script>

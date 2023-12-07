@@ -18,16 +18,16 @@ function contentHome(){
             <div class="bateriaPorcentagem">10%</div>
         </div>
         <div class="bottom-apps">
-            <div class="app">
+            <div class="app draggable">
                 <i class='bx bxs-music'></i>
             </div>
-            <div class="app">
+            <div class="app draggable">
                 <i class='bx bxl-internet-explorer'></i>
             </div>
-            <div class="app">
+            <div class="app draggable">
                 <i class='bx bx-message-rounded'></i>
             </div>
-            <div class="app">
+            <div class="app draggable">
                 <i class='bx bx-phone'></i>
             </div>
         </div>
